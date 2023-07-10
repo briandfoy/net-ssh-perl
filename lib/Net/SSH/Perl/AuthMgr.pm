@@ -58,7 +58,10 @@ sub init {
         unless $packet->type == SSH2_MSG_SERVICE_ACCEPT;
     $ssh->debug("Service accepted: " . $packet->get_str . ".");
 
-    $amgr->{agent} = Net::SSH::Perl::Agent->new(2);
+    if (!$ssh->config->get('identities_only')) {
+    	$amgr->{agent} = Net::SSH::Perl::Agent->new(2);
+    }
+
     $amgr->{service} = "ssh-connection";
 
     $amgr->send_auth_none;
