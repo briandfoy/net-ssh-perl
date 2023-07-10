@@ -127,9 +127,7 @@ my %WriteMakefile = (
 		'Test::More' => '1',
 		},
 
-	'PREREQ_PM'     => {
-		'Tie::Cycle'       => '1.05',
-		},
+	'PREREQ_PM'     => \%prereq,
 
 	'META_MERGE' => {
 		'meta-spec' => { version => 2 },
