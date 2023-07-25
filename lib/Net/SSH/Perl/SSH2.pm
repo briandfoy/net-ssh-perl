@@ -1,5 +1,3 @@
-# $Id: SSH2.pm,v 1.47 2009/01/26 01:50:38 turnstep Exp $
-
 package Net::SSH::Perl::SSH2;
 use strict;
 use warnings;

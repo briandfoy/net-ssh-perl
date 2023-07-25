@@ -1,5 +1,3 @@
-# $Id: Key.pm,v 1.20 2008/10/02 20:46:17 turnstep Exp $
-
 package Net::SSH::Perl::Key;
 use strict;
 use warnings;

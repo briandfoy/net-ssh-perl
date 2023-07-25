@@ -1,5 +1,3 @@
-# $Id: Blowfish.pm,v 1.14 2001/05/08 02:55:40 btrott Exp $
-
 package Net::SSH::Perl::Cipher::Blowfish;
 
 use strict;

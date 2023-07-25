@@ -1,5 +1,3 @@
-# $Id: Kex.pm,v 1.24 2009/02/02 01:18:27 turnstep Exp $
-
 package Net::SSH::Perl::Kex;
 use strict;
 use warnings;

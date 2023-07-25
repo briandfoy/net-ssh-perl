@@ -1,5 +1,3 @@
-# $Id: DSA.pm,v 1.24 2008/10/02 18:51:15 turnstep Exp $
-
 package Net::SSH::Perl::Key::DSA;
 use strict;
 use warnings;

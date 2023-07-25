@@ -1,5 +1,3 @@
-# $Id: AuthMgr.pm,v 1.7 2008/10/02 20:46:17 turnstep Exp $
-
 package Net::SSH::Perl::AuthMgr;
 use strict;
 use warnings;

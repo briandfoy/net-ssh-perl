@@ -1,5 +1,3 @@
-# $Id: Config.pm,v 1.22 2008/10/02 20:46:17 turnstep Exp $
-
 package Net::SSH::Perl::Config;
 use strict;
 use warnings;

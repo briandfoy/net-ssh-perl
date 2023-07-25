@@ -1,5 +1,3 @@
-# $id: dh.pm,v 1.19 2009/01/26 01:00:25 turnstep exp $
-
 package Net::SSH::Perl::Kex::DH;
 use strict;
 use warnings;

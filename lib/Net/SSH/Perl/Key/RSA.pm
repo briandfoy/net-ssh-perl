@@ -1,5 +1,3 @@
-# $Id: RSA.pm,v 1.10 2009/01/26 01:12:28 turnstep Exp $
-
 package Net::SSH::Perl::Key::RSA;
 use strict;
 use warnings;

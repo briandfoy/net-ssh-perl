@@ -1,5 +1,3 @@
-# $Id: Hosts.pm,v 1.10 2008/10/21 15:41:02 turnstep Exp $
-
 package Net::SSH::Perl::Util::Hosts;
 use strict;
 use warnings;
