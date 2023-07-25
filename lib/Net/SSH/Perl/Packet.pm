@@ -365,7 +365,7 @@ sub send_ssh2 {
         my $data = $mac->etm ? $out : $buffer->bytes;
         $macbuf = $mac->hmac(pack("N", $seqnr) . $data);
     }
- 
+
     my $output = Net::SSH::Perl::Buffer->new( MP => 'SSH2' );
     $output->append($out);
     $output->append($macbuf) if $mac && $mac->enabled;

@@ -63,7 +63,7 @@ sub keygen {
 
 sub _pub_from_private {
     my $key = shift;
-    
+
     my $hash = $key->{rsa_priv}->key2hash;
     $key->{rsa_pub}->import_key( {
         e => $hash->{e},
