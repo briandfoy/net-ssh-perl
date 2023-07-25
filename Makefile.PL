@@ -62,25 +62,7 @@ my %SSH_PREREQ = (
 
 $SSH_PREREQ{3} = { map %{$SSH_PREREQ{$_}}, 1..2 };
 
-print<<MSG;
-This is Net::SSH::Perl.
-
-As of version 1.00, Net::SSH::Perl supports both the SSH1 and
-SSH2 protocols natively. The two protocols have different
-module prerequisitives, so you need to decide which protocol(s)
-you plan to use. If you use one or the other, only those modules
-for your chosen protocol will be installed; if you choose both,
-all of the supporting modules will be installed. Please choose
-the protocols you'd like to use from the following list ("Both"
-is the default).
-
-MSG
-
-printf "    [%d] SSH%d\n", $_, $_ for 1..2;
-printf "    [3] Both SSH1 and SSH2\n";
-
-my $p = prompt("\nWhich protocol(s) do you plan to use?", 3);
-print "\n";
+my $p = -t STDIN ? prompt_for_protocol() : 3;
 
 @prereq{keys %{$SSH_PREREQ{$p}}} = values %{$SSH_PREREQ{$p}};
 
@@ -168,7 +150,29 @@ sub do_it {
 	WriteMakefile( %$arguments );
 	}
 
+sub prompt_for_protocol {
+	print<<MSG;
+This is Net::SSH::Perl.
 
+As of version 1.00, Net::SSH::Perl supports both the SSH1 and
+SSH2 protocols natively. The two protocols have different
+module prerequisitives, so you need to decide which protocol(s)
+you plan to use. If you use one or the other, only those modules
+for your chosen protocol will be installed; if you choose both,
+all of the supporting modules will be installed. Please choose
+the protocols you'd like to use from the following list ("Both"
+is the default).
+
+MSG
+
+	printf "    [%d] SSH%d\n", $_, $_ for 1..2;
+	printf "    [3] Both SSH1 and SSH2\n";
+
+	my $p = prompt("\nWhich protocol(s) do you plan to use?", 3);
+	print "\n";
+
+	return $p;
+}
 
 sub read_yes_or_no {
     my($prompt, $def) = @_;
