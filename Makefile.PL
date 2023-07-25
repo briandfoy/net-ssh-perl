@@ -62,7 +62,7 @@ my %SSH_PREREQ = (
 
 $SSH_PREREQ{3} = { map %{$SSH_PREREQ{$_}}, 1..2 };
 
-my $p = -t STDIN ? prompt_for_protocol() : 3;
+my $p = prompt_for_protocol();
 
 @prereq{keys %{$SSH_PREREQ{$p}}} = values %{$SSH_PREREQ{$p}};
 
@@ -151,7 +151,7 @@ sub do_it {
 	}
 
 sub prompt_for_protocol {
-	print<<MSG;
+	my $prompt = <<'MSG';
 This is Net::SSH::Perl.
 
 As of version 1.00, Net::SSH::Perl supports both the SSH1 and
@@ -165,13 +165,13 @@ is the default).
 
 MSG
 
-	printf "    [%d] SSH%d\n", $_, $_ for 1..2;
-	printf "    [3] Both SSH1 and SSH2\n";
+	$prompt .= sprintf "    [%d] SSH%d\n", $_, $_ for 1..2;
+	$prompt .= "    [3] Both SSH1 and SSH2\n";
+	$prompt .= "\nWhich protocol(s) do you plan to use?";
 
-	my $p = prompt("\nWhich protocol(s) do you plan to use?", 3);
-	print "\n";
+	my $result = prompt($prompt, 3);
 
-	return $p;
+	return $result;
 }
 
 sub read_yes_or_no {
