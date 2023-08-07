@@ -93,7 +93,6 @@ META.yml
 Perl.xs
 ppport.h
 README
-SIGNATURE
 src/blowfish/blf.h
 src/blowfish/blowfish.c
 src/chacha/chacha.c
