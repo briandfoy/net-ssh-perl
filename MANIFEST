@@ -114,7 +114,6 @@ src/ed25519/sha512.c
 src/ed25519/sha512.h
 src/ed25519/sign.c
 src/ed25519/verify.c
-t/00-signature.t
 t/01-compile.t
 t/02-buffer.t
 t/03-packet.t
