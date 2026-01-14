@@ -1,5 +1,8 @@
 Revision history for Net::SSH::Perl
 
+2.144 2026-01-14T19:45:53Z
+	* fix an XS problem that prevented building the module (#75)
+
 2.143 2025-01-04T01:42:27Z
 	* refresh distro and move to BRIANDFOY
 
